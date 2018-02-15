@@ -13,6 +13,7 @@ function logIn($username, $password, $ip)
   // echo mysqli_num_rows($user_set);
 if(mysqli_num_rows($user_set))
 {
+  // CHECK IF USERNAME AND PASSWORD ARE RIGHT
   $founduser = mysqli_fetch_array($user_set, MYSQLI_ASSOC);
   $id = $founduser['user_id'];
   // echo $id;
@@ -26,9 +27,10 @@ if(mysqli_num_rows($user_set))
   if(mysqli_query($link, $loginstring))
   {
     $count = $founduser['user_attempts'];
+    // CHECK IF ATTEMPTS ARE OVER 3
     if($count < 3)
     {
-
+// IF NOT, lOGIN ACCEPTED
     $update = "update tbl_user set user_ip='{$ip}' where user_id = {$id}  ";
     $log = "select user_date from tbl_user where user_id = {$id}";
     $lastlog = mysqli_query($link, $log);
@@ -41,18 +43,21 @@ $time = "update tbl_user set user_date = CURRENT_TIMESTAMP where user_id = {$id}
   }
 
   else{
+    // IF COUNT IS MORE THAN THREE, THEN LOCKED OUT PERMANENTLY
     redirect_to("admin_index2.php");
 
   }
 }
 
   {
+    // IF FAILED ATTEMPTS LESS THAN 3, SUCCESSFUL LOGIN
   redirect_to("admin_index.php");
 }
 
 }
 elseif(mysqli_num_rows($user_only)){
 
+// IF THERE  IS AN ERROR IS PASSWORD, IT STORES THE NUMBER OF TIMES IN THE FAILED ATTEMPT
   $founduser = mysqli_fetch_array($user_only, MYSQLI_ASSOC);
   $_SESSION['user_name'] = $founduser['user_fname'];
   $_SESSION['user_attempts'] = $founduser['user_attempts'];
@@ -66,6 +71,7 @@ $_SESSION['user_attempts'] += 1;
 }
 
 else{
+  // IF A USERNAME DOESN'T EXIST THIS MESSAGE IS SHOT
   $message ="Wrong ";
   return $message;
 }

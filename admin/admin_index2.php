@@ -1,6 +1,7 @@
 <?php
 require_once('phpscripts/config.php');
 
+// PAGE WHEN LOCKED OUT
 $msg = "Sorry";
 $msg2 = "Due to Security reasons, your account has been blocked. Please contact us to reactivate your account.";
 ?>

@@ -5,6 +5,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 if(isset($_POST['submit']))
 {
   // echo "works";
+  // CHECK IF FIELDS ARE FILLED
   $username = trim($_POST['username']);
   $password = trim($_POST['password']);
 if($username !== "" && $password !== "")
