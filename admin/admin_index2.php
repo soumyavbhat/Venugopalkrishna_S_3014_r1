@@ -14,7 +14,7 @@ $msg2 = "Due to Security reasons, your account has been blocked. Please contact 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
-  <title>Document</title>
+  <title>Error Page</title>
 </head>
 <body>
 

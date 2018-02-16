@@ -41,7 +41,7 @@ else {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
-  <title>Document</title>
+  <title>Welcome Page</title>
 </head>
 <body>
 
