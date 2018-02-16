@@ -28,7 +28,7 @@ if(mysqli_num_rows($user_set))
   {
     $count = $founduser['user_attempts'];
     // CHECK IF ATTEMPTS ARE OVER 3
-    if($count < 3)
+    if($count < 4)
     {
 // IF NOT, lOGIN ACCEPTED
     $update = "update tbl_user set user_ip='{$ip}' where user_id = {$id}  ";
